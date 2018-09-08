@@ -35,7 +35,7 @@ func CmdNewBuild(c *cli.Context) error {
 	body, _ := json.Marshal(requestData)
 
 	req, _ := http.NewRequest("POST", "http://api.coolops.io/builds", bytes.NewReader(body))
-	req.Header.Add("Authorization", "Token " + projectToken)
+	req.Header.Add("Authorization", "Token "+projectToken)
 	req.Header.Add("X-CoolOps-Cli-Version", info.Version)
 
 	r, err := http.DefaultClient.Do(req)
@@ -47,9 +47,9 @@ func CmdNewBuild(c *cli.Context) error {
 	switch r.StatusCode {
 	case 401:
 		return cli.NewExitError("Invalid project token", 1)
-  case 200, 201:
-    return nil
-  default:
-    return cli.NewExitError("Invalid request", 1)
+	case 200, 201:
+		return nil
+	default:
+		return cli.NewExitError("Invalid request", 1)
 	}
 }

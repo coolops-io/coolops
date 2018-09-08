@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
+	"github.com/coolopsio/coolops/info"
 	"github.com/urfave/cli"
-  "github.com/coolopsio/coolops/info"
 )
 
 func main() {

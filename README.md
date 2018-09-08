@@ -7,7 +7,11 @@
 ## Usage
 
 ```sh
-coolops build:notify [build_name] -t [project_access_token] -p [parameter_name]=[parameter_value] -p [parameter_name]=[parameter_value] -m [metadata_name]=[metadata_value]
+coolops build:notify [build_name] \
+        -t [project_access_token] \
+        -p [parameter_name]=[parameter_value] \
+        -p [parameter_name]=[parameter_value] \
+        -m [metadata_name]=[metadata_value]
 ```
 
 ## Install

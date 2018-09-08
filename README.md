@@ -17,8 +17,7 @@ coolops build:notify [build_name] \
 ## Install
 
 ```sh
-curl -L https://github.com/coolopsio/coolops/archive/master.tar.gz | tar xvz
-cd coolops-* && make install
+curl -L https://github.com/coolopsio/coolops/releases/download/v0.1.0/install.sh | sh
 ```
 
 ## Contribution

@@ -19,7 +19,7 @@ TARGET="${system}_${machine}"
 EXECUTABLE_URL="https://github.com/coolopsio/coolops/releases/download/${VERSION}/coolops_${TARGET}"
 
 echo "Downloading executable file ${EXECUTABLE_URL}..."
-curl --fail -s -o coolops $EXECUTABLE_URL
+curl --fail -s -o coolops -L $EXECUTABLE_URL
 
 echo "Installing the executable..."
 mkdir -p /usr/local/bin

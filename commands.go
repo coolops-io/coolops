@@ -13,7 +13,7 @@ var GlobalFlags = []cli.Flag{}
 
 var Commands = []cli.Command{
 	{
-		Name:      "build:notify",
+		Name:      "build:new",
 		Usage:     "Notify CoolOps.io about a new build",
 		ArgsUsage: "[build name]",
 		Flags: []cli.Flag{
@@ -38,6 +38,36 @@ var Commands = []cli.Command{
 			},
 		},
 		Action: command.CmdNewBuild,
+	},
+	{
+    Name:      "build:new:circleci",
+		Usage:     "Notify CoolOps.io about a new build using default conventions for CircleCI builds",
+		Flags: []cli.Flag{
+			cli.GenericFlag{
+				Name:  "metadata, m",
+				Usage: "Information to be sent as field on the Slack message (`name=value`)",
+				Value: &flags.KeyValueFlag{
+					Values: make(map[string]string),
+				},
+			},
+			cli.GenericFlag{
+				Name:  "param, p",
+				Usage: "Build parameters to be injected in the deployment container (`name=value`)",
+				Value: &flags.KeyValueFlag{
+					Values: make(map[string]string),
+				},
+			},
+			cli.StringFlag{
+				Name:   "name, n",
+				Usage:  "The build name. By default it's [branch-name]-[build-number]",
+			},
+			cli.StringFlag{
+				Name:   "token, t",
+				Usage:  "The project's api token",
+				EnvVar: "COOLOPS_PROJECT_API_TOKEN",
+			},
+		},
+		Action: command.CmdNewBuildCircleCI,
 	},
 }
 

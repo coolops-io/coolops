@@ -7,7 +7,7 @@
 ## Usage
 
 ```sh
-coolops build:notify [build_name] \
+coolops build:new [build_name] \
         -t [project_access_token] \
         -p [parameter_name]=[parameter_value] \
         -p [parameter_name]=[parameter_value] \
@@ -23,9 +23,9 @@ curl -L https://github.com/coolopsio/coolops/releases/download/v0.1.0/install.sh
 ## Contribution
 
 1. Fork ([https://github.com/coolopsio/coolops/fork](https://github.com/coolopsio/coolops/fork))
-1. Create a feature branch
-1. Commit your changes
-1. Rebase your local changes against the master branch
-1. Run `gofmt -s`
-1. Create a new Pull Request
+2. Create a feature branch
+3. Commit your changes
+4. Rebase your local changes against the master branch
+5. Run `gofmt -s`
+6. Create a new Pull Request
 

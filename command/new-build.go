@@ -8,8 +8,8 @@ import (
 	"github.com/urfave/cli"
 	"net/http"
 	"os"
+	"os/exec"
 	"strings"
-  "os/exec"
 )
 
 type buildData struct {
@@ -92,7 +92,7 @@ func CmdNewBuild(c *cli.Context) error {
 }
 
 func getCommitMessage(ref string) ([]byte, error) {
-  return exec.Command("git", []string{"log", "--format=%B", "-n 1", ref}...).Output()
+	return exec.Command("git", []string{"log", "--format=%B", "-n 1", ref}...).Output()
 }
 
 func CmdNewBuildCircleCI(c *cli.Context) error {
@@ -102,17 +102,17 @@ func CmdNewBuildCircleCI(c *cli.Context) error {
 		return err
 	}
 
-	d.name = strings.Replace(os.Getenv("CIRCLE_BRANCH"), "/", "-", -1)+"-"+os.Getenv("CIRCLE_BUILD_NUM")
+	d.name = strings.Replace(os.Getenv("CIRCLE_BRANCH"), "/", "-", -1) + "-" + os.Getenv("CIRCLE_BUILD_NUM")
 
-  pullRequest := os.Getenv("CIRCLE_PULL_REQUEST")
-  if pullRequest == "" {
-    pullRequest = "_No Pull Request_"
-  }
+	pullRequest := os.Getenv("CIRCLE_PULL_REQUEST")
+	if pullRequest == "" {
+		pullRequest = "_No Pull Request_"
+	}
 
-  commitMessage, _ := getCommitMessage(os.Getenv("CIRCLE_SHA1"))
+	commitMessage, _ := getCommitMessage(os.Getenv("CIRCLE_SHA1"))
 
-  d.metadata["Pull Request"] = pullRequest
-  d.metadata["Last Commit"] = "```"+strings.TrimSpace(string(commitMessage[:]))+"```"
+	d.metadata["Pull Request"] = pullRequest
+	d.metadata["Last Commit"] = "```" + strings.TrimSpace(string(commitMessage[:])) + "```"
 
 	return d.send()
 }

@@ -1,35 +1,35 @@
 package flags
 
 import (
-  "strings"
-  "github.com/urfave/cli"
+	"github.com/urfave/cli"
+	"strings"
 )
 
-type KeyValueFlag struct{
-  Values map[string]string
+type KeyValueFlag struct {
+	Values map[string]string
 }
 
 func (k *KeyValueFlag) Set(flag string) error {
-  if flag == "" {
-    return nil
-  }
-  
-  if k.Values == nil {
-    k.Values = make(map[string]string)
-  }
+	if flag == "" {
+		return nil
+	}
 
-  parts := strings.SplitN(flag, "=", 2)
-  if len(parts) != 2 {
-    return cli.NewExitError("should have the {key}={value} format", 1)
-  }
+	if k.Values == nil {
+		k.Values = make(map[string]string)
+	}
 
-  key := parts[0]
-  value := parts[1]
+	parts := strings.SplitN(flag, "=", 2)
+	if len(parts) != 2 {
+		return cli.NewExitError("should have the {key}={value} format", 1)
+	}
 
-  k.Values[key] = value
-  return nil
+	key := parts[0]
+	value := parts[1]
+
+	k.Values[key] = value
+	return nil
 }
 
 func (k *KeyValueFlag) String() string {
-  return ""
+	return ""
 }

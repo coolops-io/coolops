@@ -40,8 +40,8 @@ var Commands = []cli.Command{
 		Action: command.CmdNewBuild,
 	},
 	{
-    Name:      "build:new:circleci",
-		Usage:     "Notify CoolOps.io about a new build using default conventions for CircleCI builds",
+		Name:  "build:new:circleci",
+		Usage: "Notify CoolOps.io about a new build using default conventions for CircleCI builds",
 		Flags: []cli.Flag{
 			cli.GenericFlag{
 				Name:  "metadata, m",
@@ -58,8 +58,8 @@ var Commands = []cli.Command{
 				},
 			},
 			cli.StringFlag{
-				Name:   "name, n",
-				Usage:  "The build name. By default it's [branch-name]-[build-number]",
+				Name:  "name, n",
+				Usage: "The build name. By default it's [branch-name]-[build-number]",
 			},
 			cli.StringFlag{
 				Name:   "token, t",

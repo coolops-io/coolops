@@ -1,8 +1,8 @@
-# CoolOps.io CLI
+# coolops.io CLI
 
 ## Description
 
-`coolops` is the command line interface to help you notify CoolOps about new builds to be deployed. It provides an user friendly interface for you to define the parameters to be injected in your deployment script and also metadata to be sent with the Slack message.
+`coolops` is the command line interface to help you notify coolops about new builds to be deployed. It provides an user friendly interface for you to define the parameters to be injected in your deployment script and also metadata to be sent with the Slack message.
 
 ## Usage
 

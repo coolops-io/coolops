@@ -3,8 +3,8 @@ package command
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/coolopsio/coolops/flags"
-	"github.com/coolopsio/coolops/info"
+	"github.com/coolops-io/coolops/flags"
+	"github.com/coolops-io/coolops/info"
 	"github.com/urfave/cli"
 	"net/http"
 	"os"

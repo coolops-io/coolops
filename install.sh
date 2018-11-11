@@ -16,7 +16,7 @@ case `uname -m` in
 esac
 TARGET="${system}_${machine}"
 
-EXECUTABLE_URL="https://github.com/coolopsio/coolops/releases/download/${VERSION}/coolops_${TARGET}"
+EXECUTABLE_URL="https://github.com/coolops-io/coolops/releases/download/${VERSION}/coolops_${TARGET}"
 
 echo "Downloading executable file ${EXECUTABLE_URL}..."
 curl --fail -s -o coolops -L $EXECUTABLE_URL

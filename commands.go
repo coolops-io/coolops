@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/coolopsio/coolops/command"
-	"github.com/coolopsio/coolops/flags"
+	"github.com/coolops-io/coolops/command"
+	"github.com/coolops-io/coolops/flags"
 	"github.com/urfave/cli"
 )
 

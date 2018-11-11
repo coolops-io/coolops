@@ -116,3 +116,22 @@ func CmdNewBuildCircleCI(c *cli.Context) error {
 
 	return d.send()
 }
+
+func CmdNewBuildGitlab(c *cli.Context) error {
+	d, err := genericData(c)
+
+	if err != nil {
+		return err
+	}
+
+	d.name = strings.Replace(os.Getenv("CI_COMMIT_REF_SLUG"), "/", "-", -1) + "-" + os.Getenv("CI_JOB_ID")
+
+	jobUrl := os.Getenv("CI_JOB_URL")
+
+	commitMessage, _ := getCommitMessage(os.Getenv("CI_COMMIT_SHA"))
+
+	d.metadata["Job Url"] = jobUrl
+	d.metadata["Last Commit"] = "```" + strings.TrimSpace(string(commitMessage[:])) + "```"
+
+	return d.send()
+}

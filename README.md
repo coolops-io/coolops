@@ -17,12 +17,12 @@ coolops build:new [build_name] \
 ## Install
 
 ```sh
-curl -L https://github.com/coolopsio/coolops/releases/download/v0.1.0/install.sh | sh
+curl -L https://github.com/coolops-io/coolops/releases/download/v0.2.0/install.sh | sh
 ```
 
 ## Contribution
 
-1. Fork ([https://github.com/coolopsio/coolops/fork](https://github.com/coolopsio/coolops/fork))
+1. Fork ([https://github.com/coolops-io/coolops/fork](https://github.com/coolops-io/coolops/fork))
 2. Create a feature branch
 3. Commit your changes
 4. Rebase your local changes against the master branch

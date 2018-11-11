@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export VERSION=v0.1.0
+export VERSION=v0.2.0
 
 system=''
 machine=''
